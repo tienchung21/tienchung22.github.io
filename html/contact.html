@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../img/weblogoicon.png" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="../css/general.css" />
+    <link rel="stylesheet" href="../css/contact.css" />
+  </head>
+  <body>
+    <header class="header-section">
+      <a href="index.html"
+        ><img src="../img/logo-search-grid-1x.png" alt="Logo" class="logo" style="width: 80px;height: 80px;"
+      /></a>
+      <div>
+        <ul class="navbar">
+          <li class="navbar__item">
+            <a class="navbar__link" href="index.html">Trang Chủ</a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="shop.html"><span>Cửa hàng</span></a>
+          </li>
+
+          <li class="navbar__item">
+            <a class="navbar__link navbar__active" href="about.html"
+              ><span>Thông tin</span></a
+            >
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="contact.html"><span>Liên hệ</span></a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="login.html"><span>Đăng nhập</span></a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link cart" href="cart.html"
+              ><i class="fa-solid fa-cart-shopping"></i
+            ></a>
+          </li>
+          <a href="#" class="close"><i class="fa-solid fa-xmark"></i></a>
+        </ul>
+      </div>
+
+      <div class="mobile">
+        <a class="nav-link" href="cart.html"
+          ><i class="fa-solid fa-cart-shopping"></i
+        ></a>
+        <a class="nav-link" href="#"><i class="bar fa-solid fa-bars"></i></a>
+      </div>
+    </header>
+
+    <div class="contact-section">
+      
+      <div class="contact-form">
+        <p class="contact__text" style="font-weight: bold; font-size: 24px;">
+          Chúng tôi ở đây sẵn sàng giúp đỡ bạn. Hãy góp ý và giúp chúng tôi phát triển. Chân thành cảm ơn các bạn !
+        </p>
+
+        <form action="" class="contact__form">
+          <label for="txtName" class="contact__form-name"
+            >Họ tên</label
+          >
+          <br />
+          <input type="text" id="txtName" pattern="^(([A-Z])([a-z]{0,10})?)(\s([A-Z])([a-z]{0,10})?)?(\s([A-Z])([a-z]{0,10})?)?$" required/>
+
+          <label for="txtEmail" class="contact__form-name">Email</label>
+          <br />
+          <input type="text" id="txtEmail" pattern="^[a-z0-9\._-]+@[a-z0-9\._-]+\.[a-z]{2,6}$" required/>
+
+          <label for="txtTel" class="contact__form-name">Số Điện Thoại</label>
+          <br />
+          <input type="text" id="txtTel" pattern="^0\d{9}$" required />
+
+          <label for="txtHelp" class="contact__form-name"
+            >Chúng tôi có thể giúp gì cho bạn?</label
+          >
+          <br />
+          <textarea id="txtHelp" cols="30" rows="10"></textarea>
+
+          <button class="btn">GỬI</button>
+        </form>
+      </div>
+
+
+      <footer class="footer-section">
+        <div class="col first-col">
+          
+          <h4 class="footer-heading">Tiến chung
+            <strong>VEST NAM</strong>
+          </h4>
+          <p class="footer-text">
+            <strong>Address:</strong> 12 Nguyễn Văn Bảo, Phường 4, Quận Gò Vấp,
+            TPHCM.
+          </p>
+          <p class="footer-text"><strong>Phone:</strong> +(84) 349195610</p>
+          <p class="footer-text"><strong>Opening:</strong> 9:00-22:00, Mon-Sat</p>
+          <p class="footer-text">
+            <strong>Copyright</strong> &copy; 2050 by Tiến chung, Inc. All rights
+            reserved.
+          </p>
+          <div class="follow">
+            <h4 class="footer-heading">FOLLOW US</h4>
+            <div class="footer-icon">
+              <a class="footer-link-icon" href="http://www.facebook.com"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a class="footer-link-icon" href="http://www.instagram.com"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a class="footer-link-icon" href="http://www.twitter.com">
+                <i class="fa-brands fa-twitter"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+  <div class="col">
+           <div class="col install">
+          <h4 class="footer-heading">tiến chung TRÊN FACEBOOK</h4>
+          
+          <div class="footer-row">
+            <img src="../img/avata.png" alt="" style="width: 242px; height: 40px;"/>
+          </div>
+  
+       
+          
+        </div>
+        <div class="col">
+            <li class="footer-item">
+              <a class="footer-link" href="#"><strong>Phương Thức Thanh Toán</strong> </a>
+              <br><br><br>
+            <div class="footer-icon">
+              <a class="footer-link-icon" href="#">
+              <i class="fa-brands fa-cc-visa"></i></a>
+              <a class="footer-link-icon" href="#">
+              <i class="fa-brands fa-cc-mastercard"></i></a>
+              <a class="footer-link-icon" href="#">
+                <i class="fa-sharp fa-solid fa-building-columns"></i></a>
+            </li>
+          </ul>
+        </div>
+  
+        
+        </div>
+  
+        
+      </footer>
+
+    <script
+      src="https://kit.fontawesome.com/e1e4744c61.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
