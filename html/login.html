@@ -76,6 +76,7 @@
             placeholder="Tên người dùng"
             required
           />
+          <span id="tbtk" style="color: red;"></span>
           <input
             type="password"
             id="pwdLog"
@@ -83,6 +84,8 @@
             placeholder="Nhập mật khẩu"
             required
           />
+          <span id="tbmk" style="color: red;"></span>
+          <br>
           <input type="checkbox" class="check-box" /><span id="spanpwd"
             >Ghi nhớ mật khẩu</span
           >
@@ -90,6 +93,47 @@
             ĐĂNG NHẬP
           </button>
         </form>
+        <script>
+          function check_tk() {
+            var kt = /^[a-zA-Z]\w{6,10}$/;
+            var value = $(this).val();
+        
+            if (value == "") {
+              $("#tbtk").html("* Bắt buộc nhập !!");
+              return false;
+            }
+        
+            if (!kt.test(value)) {
+              $("#tbtk").html("* Ký tự đầu tiên không phải số, tài khoản từ 6 đến 10 ký tự!!!");
+              return false;
+            }
+        
+            $("#tbtk").html("");
+            return true;
+          }
+        
+          function check_mk() {
+            var kt = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*\W)\S{6,20}$/;
+            var value = $(this).val();
+            
+            if (value == "") {
+              $("#tbmk").html("* Bắt buộc nhập !!");
+              return false;
+            }
+
+            if (!kt.test(value)) {
+              $("#tbmk").html("* Mật khẩu phải có từ 6 đến 20 ký tự, bao gồm ký tự thường, HOA, số và ký tự đặc biệt!!");
+              return false;
+            }
+        
+            $("#tbmk").html("");
+            return true;
+          }   
+          $("#useridLog").blur(check_tk);
+          $("#pwdLog").blur(check_mk);
+
+          
+        </script>
         <form
           action=""
           id="register"
@@ -102,41 +146,108 @@
             class="input-field"
             placeholder="Tên người dùng"
             onblur="kiemTraTen();"
-            pattern="^\w{5,}$"
+        
             required
           />
+          <span id="tbtnd" style="color: red;"></span>
           <input
             type="email"
             id="email"
             class="input-field"
             placeholder="Email của bạn"
-
+            onblur="kiemTraEmail();"
             required
           />
+          <span id="tbmail" style="color: red;"></span>
           <input
             type="password"
             id="pwdRe"
             class="input-field"
             placeholder="Nhập mật khẩu của bạn"
-            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*\W)\S{8,}$"
+            onblur="kiemTraMatKhau();"
             required
           />
+          <span id="tbnmk" style="color: red;"></span>
+        
           <input
             type="password"
             id="confirmpassword"
             class="input-field"
             placeholder="Xác nhận mật khẩu"
-            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*\W)\S{8,}$"
+            onblur="kiemTraXacNhanMatKhau();"
             required
           />
+
+          <span id="tbxnmk" style="color: red;"></span>
+          <br>
           <input type="checkbox" class="check-box" /><span id="spanpwd"
             >Chấp nhận
             <a href="../html/term-of-services.html">dịch vụ và điều khoản</a>
           </span>
           <button type="submit" class="submit-btn">Đăng ký</button>
+        </form>
 
-           
-        </form><div class="social-icons">
+          <script>
+            function kiemTraTen() {
+              var kt = /^[a-zA-Z]\w{6,10}$/;
+              if ($("#useridRe").val() == "") {
+                $("#tbtnd").html("*Bắt buộc nhập !!");
+                return false;
+              }
+              if (!kt.test($("#useridRe").val())) {
+                $("#tbtnd").html("* Ký tự đầu tiên không phải số, tài khoản từ 6 đến 10 ký tự!!!");
+                return false;
+              }
+              $("#tbtnd").html("");
+              return true;
+            }
+          
+            function kiemTraEmail() {
+              var email = $("#email").val();
+              var kt = /^[a-z0-9\._-]+@[a-z0-9\._-]+\.[a-z]{2,6}$/;
+              if (email == "") {
+                $("#tbmail").html("*Bắt buộc nhập !!");
+                return false;
+              }
+              if (!kt.test(email)) {
+                $("#tbmail").html("*Nhập địa chỉ email hợp lệ !!");
+                return false;
+              }
+              $("#tbmail").html("");
+              return true;
+            }
+          
+            function kiemTraMatKhau() {
+              var kt = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*\W)\S{8,}$/;
+              if ($("#pwdRe").val() == "") {
+                $("#tbnmk").html("*Bắt buộc nhập !!");
+                return false;
+              }
+              if (!kt.test($("#pwdRe").val())) {
+                $("#tbnmk").html(
+                  "*Mật khẩu phải có ít nhất 8 ký tự, trong đó bao gồm ít nhất 1 chữ hoa, 1 chữ thường, 1 số và 1 ký tự đặc biệt !!"
+                );
+                return false;
+              }
+              $("#tbnmk").html("");
+              return true;
+            }
+          
+            function kiemTraXacNhanMatKhau() {
+              if ($("#confirmpassword").val() == "") {
+                $("#tbxnmk").html("*Bắt buộc nhập !!");
+                return false;
+              }
+              if ($("#confirmpassword").val() != $("#pwdRe").val()) {
+                $("#tbxnmk").html("*Mật khẩu xác nhận không đúng !!");
+                return false;
+              }
+              $("#tbxnmk").html("");
+              return true;
+            }       
+        </script>
+        
+        <div class="social-icons">
           <a href="https://www.instagram.com/">
             <img src="../img/loginIMG/Instagram.jpg" alt=""
           /></a>
@@ -327,7 +438,7 @@
           var storedPass = localStorage.getItem("pwdRe");
 
           if (enteredUserid == storedUserid && enteredPass == storedPass) {
-            alert("You are logged in!");
+            alert("đăng nhập thành công!");
           } else {
             alert("Username and Password do not match!");
           }
@@ -336,3 +447,25 @@
     </script>
   </body>
 </html>
+
+
+
+
+<div class="row">
+  
+  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+    
+  </div>
+  
+  <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+    
+  </div>
+  
+  <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+    
+  </div>
+  
+  
+  
+</div>
+
